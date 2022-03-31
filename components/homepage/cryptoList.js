@@ -1,4 +1,5 @@
-import React from "react";
+import Axios from "axios";
+import React, { useEffect } from "react";
 import CryptoCard from "../CryptoCard";
 import styles from "./CryptoList.module.css";
 

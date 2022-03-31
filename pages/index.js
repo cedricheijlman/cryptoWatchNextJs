@@ -20,3 +20,17 @@ export default function Home() {
     </div>
   );
 }
+
+export async function getStaticProps(context) {
+  Axios.get("https://api.coinranking.com/v2/coins?orderBy=marketCap", {
+    headers: {
+      "x-access-token": process.env.API_KEY,
+    },
+  }).then((res) => {
+    console.log(res);
+  });
+
+  return {
+    props: { test: "test" }, // will be passed to the page component as props
+  };
+}

@@ -1,16 +1,16 @@
 import React from "react";
 import styles from "../styles/CryptoCard.module.css";
 
-const CryptoCard = () => {
+const CryptoCard = ({ name, image, price, marketCap, dailyChange }) => {
   return (
     <div className={styles.card}>
       <div className={styles.title}>
-        <h5>1. Bitcoin</h5>
+        <h5>1. {name}</h5>
         <img width={35} height={35} src="./images/logobitcoin.png" alt="logo" />
       </div>
-      <p>Price: 46.7K</p>
-      <p>Market cap: 879.3B</p>
-      <p>Daily Change: 5.3%</p>
+      <p>Price: {price}</p>
+      <p>Market cap: {marketCap}B</p>
+      <p>Daily Change: {dailyChange}%</p>
     </div>
   );
 };
