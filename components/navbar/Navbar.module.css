@@ -1,0 +1,38 @@
+.container {
+  background-color: rgb(43, 43, 43);
+  flex-direction: column;
+  display: flex;
+  color: white;
+  padding: 10px 15px;
+  height: 100vh;
+
+  border-right: 1px solid rgb(143, 143, 143);
+}
+
+.container ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container h2 {
+  margin: 10px;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.container ul li {
+  width: 100%;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 10px 15px;
+  font-size: 17px;
+
+  border-radius: 6px;
+}
+
+.container ul li:hover {
+  background-color: rgb(78, 79, 79);
+  cursor: pointer;
+}
