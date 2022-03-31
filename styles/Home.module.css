@@ -1,5 +1,5 @@
 .container {
-  padding: 15px;
+  padding: 15px 20px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -13,13 +13,28 @@
 }
 
 .title {
+  margin-top: 5px;
   margin-bottom: 25px;
+}
+
+.title h1 {
+  font-weight: 300;
 }
 
 .infoContainer {
   margin: 0 15px;
-  background-color: rgb(34, 45, 70);
+  background-color: rgb(30, 34, 43);
   padding: 10px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.infoContainer h5 {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.subTitle {
+  width: 100%;
+  margin-top: 30px;
 }
