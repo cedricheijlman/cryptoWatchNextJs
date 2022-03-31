@@ -3,17 +3,19 @@ import React, { useEffect } from "react";
 import CryptoCard from "../CryptoCard";
 import styles from "./CryptoList.module.css";
 
-const CryptoList = () => {
+const CryptoList = ({ items }) => {
   return (
     <div className={styles.container}>
-      <CryptoCard />
-      <CryptoCard />
-      <CryptoCard />
-      <CryptoCard />
-      <CryptoCard />
-      <CryptoCard />
-      <CryptoCard />
-      <CryptoCard />
+      {items.coins.map((coin) => {
+        return (
+          <CryptoCard
+            name={coin.name}
+            image={coin.iconUrl}
+            marketCap={coin.marketCap}
+            price={coin.price}
+          />
+        );
+      })}
     </div>
   );
 };

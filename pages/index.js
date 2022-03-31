@@ -6,7 +6,11 @@ import CryptoList from "../components/homepage/cryptoList";
 import GlobalStats from "../components/homepage/globalStats";
 import styles from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ items }) {
+  if (!items) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -16,21 +20,25 @@ export default function Home() {
       <div className={styles.subTitle}>
         <h1>Top 10 Cryptocurrencies </h1>
       </div>
-      <CryptoList />
+      <CryptoList items={items.data} />
     </div>
   );
 }
 
 export async function getStaticProps(context) {
-  Axios.get("https://api.coinranking.com/v2/coins?orderBy=marketCap", {
-    headers: {
-      "x-access-token": process.env.API_KEY,
-    },
-  }).then((res) => {
-    console.log(res);
-  });
+  const response = await fetch(
+    "https://api.coinranking.com/v2/coins?orderBy=marketCap&limit=10",
+    {
+      method: "GET",
+      headers: {
+        "x-access-token": process.env.API_KEY,
+      },
+    }
+  );
+
+  const data = await response.json();
 
   return {
-    props: { test: "test" }, // will be passed to the page component as props
+    props: { items: data }, // will be passed to the page component as props
   };
 }
