@@ -9,10 +9,13 @@ const CryptoList = ({ items }) => {
       {items.coins.map((coin) => {
         return (
           <CryptoCard
+            key={coin.uuid}
             name={coin.name}
             image={coin.iconUrl}
             marketCap={coin.marketCap}
             price={coin.price}
+            dailyChange={coin.change}
+            id={coin.uuid}
           />
         );
       })}
