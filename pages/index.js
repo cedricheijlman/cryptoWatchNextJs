@@ -17,7 +17,7 @@ export default function Home({ data }) {
 
 export async function getStaticProps(context) {
   try {
-    const result = await Axios.get(
+    const result = await axios.get(
       "https://jsonplaceholder.typicode.com/todos/1"
     );
     const data = result.data;
@@ -27,6 +27,6 @@ export async function getStaticProps(context) {
       },
     };
   } catch (error) {
-    console.log(error);
+    return { notFound: true };
   }
 }
