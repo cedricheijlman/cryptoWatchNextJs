@@ -1,14 +1,21 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   return (
     <nav className={styles.container}>
-      <h2>CryptoWatch</h2>
+      <h2>Crypto Watch</h2>
       <ul>
-        <li>Home</li>
-        <li>Cryptocurrencies</li>
-        <li>Exchanges</li>
+        <Link href="/">
+          <li>Home</li>
+        </Link>
+        <Link href="/cryptocurrencies">
+          <li>Cryptocurrencies</li>
+        </Link>
+        <Link href="/exchanges">
+          <li>Exchanges</li>
+        </Link>
       </ul>
     </nav>
   );
