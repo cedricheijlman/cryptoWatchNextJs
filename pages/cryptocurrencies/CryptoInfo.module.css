@@ -2,7 +2,6 @@
   color: white;
   padding: 15px 20px;
   display: flex;
-  text-align: center;
 
   flex-direction: column;
   align-items: center;
@@ -25,13 +24,16 @@
 .valueInfo {
   display: flex;
   justify-content: space-between;
-  border: 1px solid white;
+  border: 1px solid rgb(73, 71, 71);
   padding: 10px;
   align-items: center;
+  background-color: rgb(31, 33, 41);
   width: 20%;
   border-radius: 7px;
   margin: 10px 0;
   min-width: 230px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .valueInfo p {
@@ -46,4 +48,15 @@
 
 .itemLeft h5 {
   margin-left: 10px;
+}
+
+.description {
+  max-width: 800px;
+  margin: 50px 0;
+}
+
+.description p {
+  margin: 10px 0;
+  margin-bottom: 15px;
+  color: rgb(209, 204, 204);
 }

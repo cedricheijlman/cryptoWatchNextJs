@@ -5,7 +5,9 @@ import TagIcon from "@mui/icons-material/Tag";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import BoltIcon from "@mui/icons-material/Bolt";
 import millify from "millify";
+import HTMLReactParser from "html-react-parser";
 const cryptoInfoPage = ({ id, coinInfo }) => {
+  console.log(coinInfo);
   return (
     <div className={styles.container}>
       <h2>
@@ -54,6 +56,10 @@ const cryptoInfoPage = ({ id, coinInfo }) => {
             <h5>All Time High</h5>
           </div>
           <p>{millify(coinInfo.allTimeHigh.price)}</p>
+        </div>
+        <div className={styles.description}>
+          <h1>What is {coinInfo.name}?</h1>
+          {HTMLReactParser(coinInfo.description)}
         </div>
       </div>
     </div>
