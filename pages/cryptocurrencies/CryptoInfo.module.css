@@ -8,6 +8,13 @@
   width: 100%;
 }
 
+.container img {
+  width: 150px;
+  height: 150px;
+  margin: 10px 10px;
+  margin-bottom: 15px;
+}
+
 .valueStatistics {
   display: flex;
   flex-direction: column;

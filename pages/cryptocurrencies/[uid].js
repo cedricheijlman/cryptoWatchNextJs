@@ -6,10 +6,36 @@ import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import BoltIcon from "@mui/icons-material/Bolt";
 import millify from "millify";
 import HTMLReactParser from "html-react-parser";
-const cryptoInfoPage = ({ id, coinInfo }) => {
-  console.log(coinInfo);
+import { Line } from "react-chartjs-2";
+
+const cryptoInfoPage = ({ id, coinInfo, coinHistory }) => {
+  console.log(coinHistory);
+  const coinPrice = [];
+  const coinTimestamp = [];
+
+  for (let i = 0; i < coinHistory?.history?.length; i++) {
+    coinPrice.push(coinHistory.history[i].price);
+    coinTimestamp.push(
+      new Date(coinHistory.history[i].timestamp).toLocaleDateString()
+    );
+  }
+
+  const data = {
+    labels: coinTimestamp,
+    datasets: [
+      {
+        label: "Price in USD",
+        data: coinPrice,
+        fill: false,
+        backgroundColor: "#0071bd",
+        borderColor: "#0071bd",
+      },
+    ],
+  };
+
   return (
     <div className={styles.container}>
+      <img src={coinInfo.iconUrl} />
       <h2>
         {coinInfo.name} ({coinInfo.symbol}) Price
       </h2>
@@ -17,6 +43,7 @@ const cryptoInfoPage = ({ id, coinInfo }) => {
         {coinInfo.name} live price in US dollars. View value statistics, market
         cap and supply
       </p>
+      <Line data={data} />
       <div className={styles.valueStatistics}>
         <h2>{coinInfo.name} Value Statistics</h2>
         <p className={styles.valueStatistics__title}>
@@ -81,10 +108,23 @@ export async function getServerSideProps(context) {
 
   const coinInfo = await res.json();
 
+  const res2 = await fetch(
+    `https://api.coinranking.com/v2/coin/${uid}/history`,
+    {
+      method: "GET",
+      headers: {
+        "x-access-token": process.env.API_KEY,
+      },
+    }
+  );
+
+  const coinHistory = await res2.json();
+
   return {
     props: {
       id: uid,
       coinInfo: coinInfo.data.coin,
+      coinHistory: coinHistory.data,
     },
   };
 }
