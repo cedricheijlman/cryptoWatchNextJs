@@ -4,7 +4,8 @@
   margin-bottom: 15px;
   background-color: rgb(30, 34, 43);
   color: white;
-  width: 20%;
+  flex: 1 1 0px;
+
   display: flex;
   min-width: 200px;
   border-radius: 7px;
