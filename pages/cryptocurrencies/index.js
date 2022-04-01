@@ -6,7 +6,7 @@ const CryptocurrenciesPage = ({ coinsInfo }) => {
   console.log(coinsInfo);
   return (
     <div className={styles.container}>
-      <h1>CryptoCurrencies</h1>
+      <h1>All cryptocurrencies</h1>
       <CryptoList items={coinsInfo.data} />
     </div>
   );

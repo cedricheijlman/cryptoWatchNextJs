@@ -1,0 +1,48 @@
+.container {
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.valueStatistics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.valueStatistics__title {
+  margin-bottom: 20px;
+}
+
+.valueInfo {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 10px;
+  align-items: center;
+  width: 20%;
+  border-radius: 7px;
+  margin: 10px 0;
+  min-width: 230px;
+}
+
+.valueInfo p {
+  font-weight: 800;
+}
+
+.itemLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemLeft h5 {
+  margin-left: 10px;
+}
