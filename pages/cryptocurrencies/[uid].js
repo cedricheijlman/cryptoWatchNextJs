@@ -33,6 +33,18 @@ const cryptoInfoPage = ({ id, coinInfo, coinHistory }) => {
     ],
   };
 
+  const options = {
+    scales: {
+      yAxes: [
+        {
+          ticks: {
+            beginAtZero: true,
+          },
+        },
+      ],
+    },
+  };
+
   return (
     <div className={styles.container}>
       <img src={coinInfo.iconUrl} />
@@ -43,7 +55,7 @@ const cryptoInfoPage = ({ id, coinInfo, coinHistory }) => {
         {coinInfo.name} live price in US dollars. View value statistics, market
         cap and supply
       </p>
-      <Line data={data} />
+      <Line data={data} options={options} />
       <div className={styles.valueStatistics}>
         <h2>{coinInfo.name} Value Statistics</h2>
         <p className={styles.valueStatistics__title}>
