@@ -13,10 +13,12 @@ const cryptoInfoPage = ({ id, coinInfo, coinHistory }) => {
   const coinPrice = [];
   const coinTimestamp = [];
 
-  for (let i = 0; i < coinHistory?.history?.length; i++) {
-    coinPrice.push(coinHistory.history[i].price);
+  const historyCoinReverse = [...coinHistory.history].reverse();
+
+  for (let i = 0; i < historyCoinReverse?.length; i++) {
+    coinPrice.push(historyCoinReverse[i].price);
     coinTimestamp.push(
-      new Date(coinHistory.history[i].timestamp).toLocaleDateString()
+      new Date(historyCoinReverse[i].timestamp * 1000).toLocaleDateString()
     );
   }
 
@@ -121,7 +123,7 @@ export async function getServerSideProps(context) {
   const coinInfo = await res.json();
 
   const res2 = await fetch(
-    `https://api.coinranking.com/v2/coin/${uid}/history`,
+    `https://api.coinranking.com/v2/coin/${uid}/history?timePeriod=5y`,
     {
       method: "GET",
       headers: {
