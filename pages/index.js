@@ -10,7 +10,7 @@ export default function Home({ items, globalStats }) {
   if (!items) {
     return <h1>Loading...</h1>;
   }
-
+  console.log(items);
   return (
     <div className={styles.container}>
       <div className={styles.title}>

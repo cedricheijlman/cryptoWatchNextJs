@@ -16,6 +16,7 @@ const CryptoList = ({ items }) => {
             price={coin.price}
             dailyChange={coin.change}
             id={coin.uuid}
+            rank={coin.rank}
           />
         );
       })}

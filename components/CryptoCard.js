@@ -3,12 +3,22 @@ import React from "react";
 import styles from "../styles/CryptoCard.module.css";
 import millify from "millify";
 
-const CryptoCard = ({ name, image, price, marketCap, dailyChange, id }) => {
+const CryptoCard = ({
+  name,
+  image,
+  price,
+  marketCap,
+  dailyChange,
+  id,
+  rank,
+}) => {
   return (
     <Link href={`/cryptocurrencies/${id}`}>
       <div className={styles.card}>
         <div className={styles.title}>
-          <h5>1. {name}</h5>
+          <h5>
+            {rank}. {name}
+          </h5>
           <img width={35} height={35} src={image} alt="logo" />
         </div>
         <p>Price: ${millify(price)}</p>
