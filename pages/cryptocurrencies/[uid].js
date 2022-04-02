@@ -57,7 +57,9 @@ const cryptoInfoPage = ({ id, coinInfo, coinHistory }) => {
         {coinInfo.name} live price in US dollars. View value statistics, market
         cap and supply
       </p>
-      <Line data={data} options={options} />
+      <div className={styles.chart}>
+        <Line data={data} options={options} />
+      </div>
       <div className={styles.valueStatistics}>
         <h2>{coinInfo.name} Value Statistics</h2>
         <p className={styles.valueStatistics__title}>
@@ -123,7 +125,7 @@ export async function getServerSideProps(context) {
   const coinInfo = await res.json();
 
   const res2 = await fetch(
-    `https://api.coinranking.com/v2/coin/${uid}/history?timePeriod=5y`,
+    `https://api.coinranking.com/v2/coin/${uid}/history?timePeriod=1y`,
     {
       method: "GET",
       headers: {

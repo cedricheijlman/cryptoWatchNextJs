@@ -9,10 +9,9 @@
 }
 
 .container img {
-  width: 150px;
-  height: 150px;
-  margin: 10px 10px;
-  margin-bottom: 15px;
+  width: 130px;
+  height: 130px;
+  margin: 25px 10px;
 }
 
 .valueStatistics {
@@ -21,7 +20,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .valueStatistics__title {
@@ -59,11 +58,17 @@
 
 .description {
   max-width: 800px;
-  margin: 50px 0;
+  margin-top: 80px;
 }
 
 .description p {
   margin: 10px 0;
   margin-bottom: 15px;
   color: rgb(209, 204, 204);
+}
+
+.chart {
+  width: 90%;
+  margin-top: 35px;
+  margin-bottom: 90px;
 }
