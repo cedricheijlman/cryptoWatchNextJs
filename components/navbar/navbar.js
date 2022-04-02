@@ -13,9 +13,6 @@ const Navbar = () => {
         <Link href="/cryptocurrencies">
           <li>Cryptocurrencies</li>
         </Link>
-        <Link href="/exchanges">
-          <li>Exchanges</li>
-        </Link>
       </ul>
     </nav>
   );
